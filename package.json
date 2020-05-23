@@ -1,0 +1,17 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Server.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "npm": "^6.13.6"
+  },
+  "scripts": {
+    "server": "npx nodemon Server.js"
+  },
+  "author": "Fredrik Hjärpe",
+  "license": "ISC"
+}
