@@ -1,7 +1,6 @@
 /* ==================================== Main server file ====================================
      Basic Server module */
 const express = require('express');
-let jwt = require('jsonwebtoken');
 
 let cors = require('cors');
 const app = express();
@@ -13,8 +12,8 @@ app.use(cors());
 let ReadTxtFiles= require('./Functions/ReadTxtFiles');
 
 // The server information
-const port = process.env.PORT || SQLConfig.serverPort;
-app.listen(port, () => console.log(`getSQLData is listening on port ${port}!`));
+const port = 3001;
+app.listen(port, () => console.log(`server is listening on port ${port}!`));
 
 /* Run function for the mehods ==============================================================
 
@@ -54,14 +53,7 @@ app.listen(port, () => console.log(`getSQLData is listening on port ${port}!`));
     SQLFunctions.resetSQLData();
 }); */
 // Run default   
-app.get('/AppData', (req, res) => {
+app.get('/GetText', (req, res) => {
     console.log('========================= ReadTxtFile ==========================================');
-    
-     
-
-    setTimeout(()  => {
-        res.status(200).send(ReadTxtFiles
-            .incommingSQLData());        
-    }, 500);  
-    SQLFunctions.resetSQLData();
+        res.status(200).send({line: 'Hi'});
 });
