@@ -53,7 +53,15 @@ app.listen(port, () => console.log(`server is listening on port ${port}!`));
     SQLFunctions.resetSQLData();
 }); */
 // Run default   
-app.get('/GetText', (req, res) => {
+app.get('/GetText::pageText', (req, res) => {
     console.log('========================= ReadTxtFile ==========================================');
-        res.status(200).send({line: 'Hi'});
+       console.log(req.params);
+       
+    
+    res.status(200).send(
+        {textMain: {
+            welcome: '',
+            ewdfew: '',
+       }, 
+       textServices: 'gerag'});
 });
