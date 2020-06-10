@@ -9,19 +9,22 @@ app.use(express.static('public'));
 app.use(cors());
 
 // Import usefull files
-const welcomeText = require('./TextFile/WelcomeText');
+const textFile = require('./TextFile/ReadTextFile');
 
 // The server information
 const port = 3001;
 app.listen(port, () => console.log(`server is listening on port ${port}!`));
 
-// Collecting all textFiles into a object
-const sendTextOStr = {
-    textMain: welcomeText.WelcomeText(),
-}
 // Run default   
-app.get('/GetText::pageText', (req, res) => {
+app.get('/GetText', (req, res) => {
     console.log('========================= ReadTxtFile ==========================================');
+    // Collecting all textFiles into a object
+    const sendTextOStr = {
+        textMain: textFile.welcome(),
+        services: textFile.services(),
+    }
     const getSendingType = req.params.pageText;
-    res.status(200).send(sendTextOStr[getSendingType]);
+    console.log("getSendingType", getSendingType)
+    res.status(200).send(sendTextOStr//[getSendingType]
+    );
 })
