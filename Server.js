@@ -22,9 +22,10 @@ app.get('/GetText', (req, res) => {
     const sendTextOStr = {
         textMain: textFile.welcome(),
         services: textFile.services(),
+        aboutMe: textFile.abouteMe(),
     }
-    const getSendingType = req.params.pageText;
+/*     const getSendingType = req.params.pageText;
     console.log("getSendingType", getSendingType)
-    res.status(200).send(sendTextOStr//[getSendingType]
+ */    res.status(200).send(sendTextOStr//[getSendingType]
     );
 })
