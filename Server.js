@@ -22,7 +22,7 @@ app.get('/GetText', (req, res) => {
     const sendTextOStr = {
         textMain: textFile.welcome(),
         services: textFile.services(),
-        aboutMe: textFile.abouteMe(),
+        aboutMe: '',//textFile.abouteMe(),
     }
 /*     const getSendingType = req.params.pageText;
     console.log("getSendingType", getSendingType)
