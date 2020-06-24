@@ -1,7 +1,8 @@
 /* ==================================== Main server file ====================================
      Basic Server module */
 const express = require('express');
-
+const https = require('https');
+const fs = require('fs');
 let cors = require('cors');
 const app = express();
 app.use(express.json());
@@ -13,7 +14,18 @@ const textFile = require('./TextFile/ReadTextFile');
 
 // The server information
 const port = 3001;
-app.listen(port, () => console.log(`server is listening on port ${port}!`));
+
+/* // HTTPSercure server
+const hskey = fs.readFileSync('./ssl/server.key');
+const hscert = fs.readFileSync('./ssl/server.cert');
+const serverOptions = {
+    key: hskey,
+    cert: hscert
+  };
+const httpsServer = https.createServer(serverOptions, app);
+httpsServer. */
+
+app.listen(port, () => console.log(`Server is listening on port ${port}!`));
 
 // Run default   
 app.get('/GetText', (req, res) => {
