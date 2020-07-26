@@ -25,6 +25,9 @@ app.get('/GetText', (req, res) => {
     console.log("sendTextOStr", sendTextOStr.textMain)
 /*     const getSendingType = req.params.pageText;
     console.log("getSendingType", getSendingType)
- */    res.status(200).send(sendTextOStr//[getSendingType]
+ */   
+res.status(200).send(sendTextOStr
+    //[getSendingType]
+
     );
 })
